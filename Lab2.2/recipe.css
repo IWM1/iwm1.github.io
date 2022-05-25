@@ -1,0 +1,51 @@
+
+
+h1,h2{
+   background-color:  #F0F0F0;
+   
+   font-family: "Lucida Sans Unicode", Helvetica, Arial;
+   text-align: center;
+   font-size: 22pt;
+   color: #A4A400;
+   text-align: center;
+   text-decoration-line: underline;
+   font-weight: lighter;
+   
+}
+.tbsb{
+    text-decoration-line:overline;
+}
+h2{
+    text-align: left;
+    font-size: 18pt;
+    font-weight: lighter;
+}
+.Comment1{
+    background-color: rgb(254, 255, 224);
+}
+.Comment2{
+    background-color: lightyellow;
+    
+}
+.comment3{
+    background-color: lightyellow;
+}
+
+body{
+    background-color: white;
+    /* foregrooundcolor 404040 */
+    font-weight: 11pt;
+
+}
+.directions{
+    list-style: circle;
+}
+P{
+   font-family: "Georgia", "Garamond", "serif";
+}
+link{
+    color: #A4A400;
+}
+.footer{
+    color: A4A400
+}
