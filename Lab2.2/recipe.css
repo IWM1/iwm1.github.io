@@ -12,6 +12,9 @@ h1,h2{
    font-weight: bold;
    
 }
+body{
+    background-image: url("images/silverware.jpg");
+}
 .tbsb{
     text-decoration-line:overline;
 }
