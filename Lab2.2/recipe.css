@@ -9,7 +9,7 @@ h1,h2{
    color: #A4A400;
    text-align: center;
    text-decoration-line: underline;
-   font-weight: lighter;
+   font-weight: bold;
    
 }
 .tbsb{
@@ -43,9 +43,9 @@ body{
 P{
    font-family: "Georgia", "Garamond", "serif";
 }
-link{
+.footer{
     color: #A4A400;
 }
-.footer{
-    color: A4A400
+.footer2{
+    color: #A4A400;
 }
