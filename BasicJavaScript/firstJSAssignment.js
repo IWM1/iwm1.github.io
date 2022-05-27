@@ -92,4 +92,17 @@ function filterLongWords(mylength, myStrArray){
     }
     return Solution;
 }
-//Question8
+//Question8 
+const question8 = [1,3,5,3,3]; 
+// a) multiply each element by 10; 
+let solution8A = question8.map(function(element,index,array){
+    return element*10;
+})
+// b) return array with all elements equal to 3; 
+let solution8B = question8.filter(function(element,index,array){
+    return element === 3;
+});
+// c) return the product of all elements;
+let solution8C = question8.reduce(function(prev,element,index,array){
+    return prev*element;
+},1);
