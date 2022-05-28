@@ -39,7 +39,7 @@ body{
 .column1{
     flex-basis: 25%;
     height: 50px;
-    background-color: #757575;
+    background-color: #5c5a5a;
     padding-bottom: 450px;
 }
 .column2{
@@ -52,7 +52,7 @@ body{
 .column3{
     flex-basis: 25%;
     height: 50px;
-    background-color: #cecbcb;
+    background-color: #3b3b3b;
     padding-bottom: 450px;
 }
 
