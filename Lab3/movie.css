@@ -24,7 +24,7 @@ section{
     right: 20%;
 }
 .header{
-    background-image: url("../images/rbg.png");
+    background-image: url("images/rbg.png");
     display: block;
     background-size: contain;
     height: 83px;
