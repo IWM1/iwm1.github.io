@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta author="MD SHAFIQUL ISLAM">
+    <title>DOM Assignment</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+                                    
+            var myform = $("<form></form>")
+            $(myform).attr("id", "myForm")
+            $(myform).append("<h4>Input Text: </h4><input type='text' id='textfield' placeholder='Enter any text'>")
+
+            $(myDIV).after(myform)
+            myform.append($('<h4>', { class: 'degree', text: 'Degree:' }))
+
+            var radio1 = document.createElement('input');
+            radio1.setAttribute('type', 'radio');           
+            radio1.setAttribute('name', 'degree');
+            radio1.setAttribute('value', 'Graduate');
+            radio1.setAttribute('id', 'radio1');
+            radio1.setAttribute('class', 'radios');
+            myform.append(radio1);
+
+            myform.append(                
+                $('<input />', { id: 'radio2', class:'radios', name: 'degree', value:'Post-Graduate', type: 'radio' }),
+                $('<input />', { id: 'radio3', class:'radios', name: 'degree', value:'TM', type: 'radio' }),
+
+                $('<h4 />', { id: 'courseheader', text:"Select Courses:"}),
+                $('<div>', { id: 'chkBoxes'}),
+                
+
+                $('<h4 />').text("Select Box:"),
+
+                $('<select />', { id: 'sellist', name: 'sellist' })
+                .append('<option value="Option1">Option 1</option>')
+                .append('<option value="Option2">Option 2</option>')
+                .append('<option value="Option3">Option 3</option>'),
+                $('<h4 />').text("Your message:"),
+                $('<textarea />', { id: 'txtArea', name: 'txtArea', rows:'5', cols:'30' }),
+                $('<br />'),
+                $('<input />', { id: 'savebutton', class:'btn', type: 'button', value: 'Show user\'s input' })
+            )
+            $("#chkBoxes").append(
+                $('<input />', { id: 'chkbox1', class:'chkbox', name: 'course', value:'Course 1', type: 'checkbox' }),
+                $('<input />', { id: 'chkbox2', class:'chkbox', name: 'course', value:'Course 2', type: 'checkbox' }),
+                $('<input />', { id: 'chkbox3', class:'chkbox', name: 'course', value:'Course 3', type: 'checkbox' }),
+                $('<input />', { id: 'chkbox4', class:'chkbox', name: 'course', value:'Course 4', type: 'checkbox' }),)
+            
+            let rdo1lbl = $("<label class='ival'></label>").text("Graduate");
+            $(radio1).after(rdo1lbl);
+            $(radio2).after($("<label class='ival'></label>").text("Post-Graduate"))
+            $(radio3).after($("<label class='ival'></label>").text("Meditation"))
+
+            $(chkbox1).after($("<label class='ival'></label>").text("Course 1"))
+            $(chkbox2).after($("<label class='ival'></label>").text("Course 2"))
+            $(chkbox3).after($("<label class='ival'></label>").text("Course 3"))
+            $(chkbox4).after($("<label class='ival'></label>").text("Course 4"))
+
+            $("#savebutton").on("click", function(){
+
+                console.log("in savebutton event")
+                const textval = $("#textfield").val();
+                const chkedItem = $(".chkbox:checked").val();
+                const radioval = $(".radios:checked").val();
+                const selectedVal = $("#sellist").val();
+                const txtAreaVal = $("#txtArea").val();
+                $("#textfield").replaceWith("<span>"+ textval +"</span>");
+                $(".chkbox, .radios").replaceWith("<span></span>");
+                $('.ival').hide()
+                $(".degree").after("<span>"+ radioval +"</span>")
+                $("#chkBoxes").after("<span>"+ chkedItem +"</span>");
+                $("#sellist").replaceWith("<span>"+ selectedVal +"</span>");
+                $("#txtArea").replaceWith("<span>"+ txtAreaVal +"</span>");
+
+            })              
+
+        });
+    </script>
+
+</head>
+<body>
+
+    <div id="myDIV" class="myClass" name="myName">
+        <div id="innerDIV">
+        
+        
+        </div>
+    </div>
+ 
+</body>
+</html>
