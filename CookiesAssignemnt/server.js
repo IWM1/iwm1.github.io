@@ -19,6 +19,7 @@ const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")
 const ejs = require("ejs")
 const path = require("path")
+const { dirname } = require("path")
 
 const app = express()
 // set the view engine to ejs
@@ -72,6 +73,7 @@ app.get("/form",(req,res,next)=>{
     else{
         res.sendFile(path.join(__dirname,"views/login.html"))
     }
+
 })
 
 // check the user input against the stored values
@@ -98,30 +100,20 @@ function decryptValidateKey(input){
     return validate(userName, password);
 }
 
-app.post("/add",(req,res,next) => {
 
-    let myInputs = req.body;
-    console.log(myInputs)
+  
 
-    let myCourse = myInputs.course
-    let course = "<div>"
-    for(let i=0; i<myCourse.length; i++){
-        course += myCourse[i] + " "
-    }
-    course+"</div>"
+    app.post("/add", (req, res, next) => {
+        
+            res.cookie("resultCookie", req.body);
+            res.sendFile(path.join(__dirname,"views/display.html"))
+   
+    });
+    
+    app.get("/display", (req, res, next) => {
 
-    res.render(path.join(__dirname, "views/display.html")
-    )
-    // res.send(
-    //     "<div>"+ myInputs.textfield +"</div>"+
-    //     "<div>"+ myInputs.degreen+"</div>"+
-    //         course+
-    //     "<div>"+ myInputs.sellist+"</div>"+
-    //     "<div>"+ myInputs.txtArea+"</div>"
-    // )
+            res.render("display", {resultCookie: req.cookies.resultCookie});
 
-})
+    });
+    console.log(__dirname)
 
-app.use((req, res, next) =>{
-    res.redirect("/login");
-});
